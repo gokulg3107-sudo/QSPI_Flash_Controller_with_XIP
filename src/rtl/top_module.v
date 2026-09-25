@@ -1,7 +1,7 @@
 `include "command_code.h"
 `timescale 1ns/100ps
 
-module top_module(sclk, psel, penable, pclk, presetn, pwrite, paddr, pwdata, pready, pslverr, cmd_reg_sync, len_reg_sync, dummy_reg_sync, addr_reg_sync, start_toggle, start_out, busy_reg, rx_read_data, cs, si, so, wp, sio3, transmission_completed, indirect_path_busy, hsel, haddr, hwrite, hready, hsize, hburst, htrans, hwdata, hreadyout, hresp, hrdata);
+module top_module(sclk, psel, penable, pclk, presetn, pwrite, paddr, pwdata, pready, pslverr, cmd_reg_sync, len_reg_sync, dummy_reg_sync, addr_reg_sync, start_toggle, start_out, busy_reg, rx_read_data, cs, si, so, wp, sio3, transmission_completed, indirect_path_busy, hsel, haddr, hwrite, hready, hsize, hburst, htrans, hwdata, hreadyout, hresp, hrdata, prdata);
 
 input psel, penable, sclk, pclk, presetn, pwrite;
 input [31:0] paddr, pwdata;
@@ -18,7 +18,7 @@ output wire hreadyout, hresp;
 output wire [31:0] hrdata;
 
 //  APB read data
-wire [31:0] prdata;
+output wire [31:0] prdata;
 
 //  APB / register bank 
 wire [7:0] cmd_reg;
